@@ -6,3 +6,6 @@
 
 /* Brand accents and strong typography from the Herts Tutors reference. */
 h1{font-weight:800;letter-spacing:-2.5px}h1 span{color:#122b62}.generate{background:#c99a26;color:#122b62;font-weight:800}.generate:hover{background:#e1b84b}.logo{background:#122b62;color:#fff;border-radius:4px}.brand-dot{color:#c99a26}.settings,.worksheet{border-radius:8px}.topic-options input:checked+span{border-color:#927018;box-shadow:inset 3px 0 #c99a26}.score{border-left-color:#c99a26}.badge{color:#122b62;background:#faf7ef;border-color:#e8dfca}.intro{border-top:4px solid #c99a26;margin-top:24px}.eyebrow{color:#785b10}@media print{.intro{display:none}.answer{background:#fff}}
+
+/* Original Herts Tutors logo, with its proportions and transparency preserved. */
+.brand .logo{display:block;width:56px;height:56px;object-fit:contain;background:transparent;border-radius:0;flex-shrink:0;margin-right:12px}@media(max-width:600px){.brand .logo{width:44px;height:44px;margin-right:8px}.brand{font-size:20px}header{gap:12px}}
