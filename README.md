@@ -25,3 +25,9 @@ This app is ready for static hosting; no build or API keys are required.
 In the GitHub repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then select **main** and **/ (root)** and click **Save**. GitHub will show the published URL when deployment completes. The expected project URL is `https://hertstutorsuk-collab.github.io/practice/`; it is not live until Pages deployment succeeds.
 
 If GitHub asks you to upgrade or change repository visibility, Pages availability depends on the repository owner's plan. Do not change visibility just to deploy without the owner's approval.
+
+## Answer checking
+
+Enter an answer below each question and select **Mark my answers** for a score and feedback. **Retry missed questions** clears only missed answers, hides worked solutions, and focuses the first retry. Correct answers remain filled. Fraction answers accept a/b notation; equivalent fractions needing simplification receive a prompt. Numeric decimals and `x = ...` are supported. This checks final answers only, not GCSE method marks. Scores are practice feedback, not predicted GCSE grades, and are not stored.
+
+Branding currently uses a provisional Herts Tutors navy/teal palette, pending confirmation against the supplied brand reference.

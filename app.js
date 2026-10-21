@@ -1,12 +1,19 @@
+import { checkAnswer } from './marking.js';
 import { generateWorksheet, topics } from './generator.js';
 const form = document.querySelector('#generator');
 const list = document.querySelector('#questions');
 const answerButton = document.querySelector('#answers');
 let revealed = false;
+let currentQuestions = [];
+let currentTopic;
+let lastResults = [];
 function render() {
   try {
     const data = new FormData(form), topic = data.get('topic'), difficulty = data.get('difficulty'), count = Number(data.get('count'));
     const questions = generateWorksheet(topic,difficulty,count);
+    currentQuestions = questions; currentTopic = topic; lastResults = [];
+    document.querySelector("#score").hidden = true; document.querySelector("#retry").hidden = true;
+    document.querySelector("#mark").textContent = "Mark my answers ✓";
     list.replaceChildren();
     for (const [index, question] of questions.entries()) {
       const item = document.createElement('li');
@@ -17,7 +24,10 @@ function render() {
       const answer = document.createElement('div'); answer.className = 'answer'; answer.hidden = true;
       const result = document.createElement('strong'); result.textContent = question.answer;
       const explanation = document.createElement('p'); explanation.textContent = question.explanation;
-      answer.append(result,explanation); body.append(prompt,space,answer); item.append(number,body); list.append(item);
+      const input = document.createElement('input'); input.className = 'student-answer'; input.type = 'text'; input.autocomplete = 'off'; input.placeholder = topic === 'fractions' ? 'e.g. 3/4' : 'Your answer'; input.setAttribute('aria-label', `Your answer to question ${index+1}`);
+      const feedback = document.createElement('p'); feedback.className = 'feedback'; feedback.id = `feedback-${index}`; input.setAttribute('aria-describedby',feedback.id);
+      input.addEventListener('input', () => { feedback.textContent = ''; item.removeAttribute('data-result'); document.querySelector('#score').hidden = true; document.querySelector('#retry').hidden = true; });
+      answer.append(result,explanation); body.append(prompt,space,input,feedback,answer); item.append(number,body); list.append(item);
     }
     revealed = false; answerButton.textContent = 'Show answers'; answerButton.setAttribute('aria-pressed','false');
     document.querySelector('#worksheet-title').textContent = `${topics[topic]}, one step at a time.`;
@@ -34,3 +44,31 @@ answerButton.addEventListener('click', () => {
 });
 document.querySelector('#print').addEventListener('click', () => window.print());
 render();
+
+document.querySelector('#mark').addEventListener('click', () => {
+  const items = [...list.children];
+  lastResults = items.map((item,index) => {
+    const result = checkAnswer(item.querySelector('input').value,currentQuestions[index].answer,currentTopic === 'fractions');
+    item.dataset.result = result;
+    item.querySelector('.feedback').textContent = {correct:'✓ Correct — nicely done!',incorrect:'↻ Not quite. Try again or check the worked answer.',blank:'Add an answer to this question.',simplify:'Almost! Your value is right; simplify your fraction.'}[result];
+    return result;
+  });
+  const correct = lastResults.filter(result => result === 'correct').length;
+  const score = document.querySelector('#score'); score.hidden = false;
+  score.textContent = `${correct} / ${items.length} correct · ${Math.round(correct/items.length*100)}%. ${correct === items.length ? 'Great work! Generate a new worksheet or stretch yourself with a harder level.' : 'Use the feedback below each question, then retry the ones you missed.'}${revealed ? ' Answers are visible — this is a practice check.' : ''}`;
+  document.querySelector('#retry').hidden = correct === items.length;
+});
+document.querySelector('#retry').addEventListener('click', () => {
+  let first;
+  [...list.children].forEach((item,index) => {
+    if (lastResults[index] !== 'correct') {
+      const input = item.querySelector('input'); input.value = ''; first ??= input;
+      item.querySelector('.feedback').textContent = ''; item.removeAttribute('data-result');
+    }
+    item.querySelector('.answer').hidden = true;
+  });
+  revealed = false; answerButton.textContent = 'Show answers'; answerButton.setAttribute('aria-pressed','false');
+  document.querySelector('#score').hidden = true; document.querySelector('#retry').hidden = true;
+  document.querySelector('#mark').textContent = 'Check my answers again ✓';
+  first?.focus();
+});
