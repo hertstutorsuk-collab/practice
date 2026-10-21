@@ -41,3 +41,7 @@ Questions and entered answers automatically save in local browser storage. Retur
 ## Personal welcome
 
 The welcome screen asks for a first name or nickname and shows “Hi, [name]” above the worksheet. Students can continue as a guest, edit their name through **Profile**, or remove it with **Forget my name**. Remembering the name is optional and only uses this browser's local storage; otherwise it lasts for the current visit. This is not secure authentication: there are no passwords, online accounts, individual private worksheet stores or cross-device syncing. Worksheets remain shared within the browser. Secure sign-in would need an authentication provider and per-user data storage.
+
+## Past papers
+
+The Past papers section links to official AQA 8300, Pearson Edexcel 1MA1 and OCR J560 GCSE Maths assessment libraries, with exam-board filtering, Foundation/Higher guidance, calculator paper details and a revision workflow. Students choose a year and download the question paper and matching mark scheme on the official site. No exam PDFs are copied or hosted here; recent materials may be restricted to centres. Live destination/PDF checks were blocked by this cloud environment's network policy; the section does not claim individual downloads are verified.
