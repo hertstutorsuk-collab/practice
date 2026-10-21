@@ -37,3 +37,7 @@ Branding follows the supplied Herts Tutors website screenshot: deep navy (#122b6
 Choose **Mixed revision** to balance fractions, percentages and algebra in one worksheet. Marking shows a per-topic summary, with buttons to create focused practice for topics with missed questions. This reflects the current worksheet, not a GCSE grade prediction.
 
 Questions and entered answers automatically save in local browser storage. Returning on the same browser and site restores the latest worksheet and answers; marking and answer visibility reset. No account or server is involved. Avoid entering personal information on a shared device. **Clear saved work** removes the stored worksheet and pauses saving until a new worksheet is generated. Private browsing, cleared storage, or another device may not retain work; if saving is unavailable the app remains usable and displays a message.
+
+## Personal welcome
+
+The welcome screen asks for a first name or nickname and shows “Hi, [name]” above the worksheet. Students can continue as a guest, edit their name through **Profile**, or remove it with **Forget my name**. Remembering the name is optional and only uses this browser's local storage; otherwise it lasts for the current visit. This is not secure authentication: there are no passwords, online accounts, individual private worksheet stores or cross-device syncing. Worksheets remain shared within the browser. Secure sign-in would need an authentication provider and per-user data storage.
