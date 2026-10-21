@@ -30,4 +30,4 @@ If GitHub asks you to upgrade or change repository visibility, Pages availabilit
 
 Enter an answer below each question and select **Mark my answers** for a score and feedback. **Retry missed questions** clears only missed answers, hides worked solutions, and focuses the first retry. Correct answers remain filled. Fraction answers accept a/b notation; equivalent fractions needing simplification receive a prompt. Numeric decimals and `x = ...` are supported. This checks final answers only, not GCSE method marks. Scores are practice feedback, not predicted GCSE grades, and are not stored.
 
-Branding currently uses a provisional Herts Tutors navy/teal palette, pending confirmation against the supplied brand reference.
+Branding follows the supplied Herts Tutors website screenshot: deep navy (#122b62), gold (#c99a26), white backgrounds and bold headings. Colours are visual approximations from the reference; the header uses a text monogram rather than the original stag logo asset.
