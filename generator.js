@@ -23,9 +23,11 @@ export function generateQuestion(topic, difficulty = 'medium', random = Math.ran
 }
 export function generateWorksheet(topic,difficulty,count,random = Math.random) {
   if (!Number.isInteger(count) || count < 1 || count > 30) throw new Error('Choose between 1 and 30 questions');
+  if (!Object.hasOwn(topics, topic) && topic !== 'mixed') throw new Error('Choose a valid topic');
   const questions = [], seen = new Set();
   for (let attempt=0; questions.length<count && attempt<1000; attempt++) {
-    const question = generateQuestion(topic,difficulty,random);
+    const questionTopic = topic === 'mixed' ? Object.keys(topics)[questions.length % 3] : topic;
+    const question = { ...generateQuestion(questionTopic,difficulty,random), topic: questionTopic };
     if (!seen.has(question.prompt)) { seen.add(question.prompt); questions.push(question); }
   }
   if (questions.length !== count) throw new Error('Could not create enough unique questions. Please try again.');

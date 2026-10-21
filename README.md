@@ -31,3 +31,9 @@ If GitHub asks you to upgrade or change repository visibility, Pages availabilit
 Enter an answer below each question and select **Mark my answers** for a score and feedback. **Retry missed questions** clears only missed answers, hides worked solutions, and focuses the first retry. Correct answers remain filled. Fraction answers accept a/b notation; equivalent fractions needing simplification receive a prompt. Numeric decimals and `x = ...` are supported. This checks final answers only, not GCSE method marks. Scores are practice feedback, not predicted GCSE grades, and are not stored.
 
 Branding follows the supplied Herts Tutors website screenshot: deep navy (#122b62), gold (#c99a26), white backgrounds and bold headings. Colours are visual approximations from the reference; the original uploaded stag logo is used in the header and as the browser tab icon.
+
+## Mixed revision and saved work
+
+Choose **Mixed revision** to balance fractions, percentages and algebra in one worksheet. Marking shows a per-topic summary, with buttons to create focused practice for topics with missed questions. This reflects the current worksheet, not a GCSE grade prediction.
+
+Questions and entered answers automatically save in local browser storage. Returning on the same browser and site restores the latest worksheet and answers; marking and answer visibility reset. No account or server is involved. Avoid entering personal information on a shared device. **Clear saved work** removes the stored worksheet and pauses saving until a new worksheet is generated. Private browsing, cleared storage, or another device may not retain work; if saving is unavailable the app remains usable and displays a message.
