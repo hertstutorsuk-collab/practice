@@ -6,7 +6,7 @@ test('mixed sheets are balanced, unique and tagged at every difficulty',()=>{
   for(const difficulty of ['easy','medium','hard']) for(const count of [5,10,20]) {
     const sheet=generateWorksheet('mixed',difficulty,count);
     assert.equal(new Set(sheet.map(q=>q.prompt)).size,count);
-    const counts=['fractions','percentages','algebra'].map(topic=>sheet.filter(q=>q.topic===topic).length);
+    const counts=['functions','calculus','probability','statistics'].map(topic=>sheet.filter(q=>q.topic===topic).length);
     assert.ok(Math.max(...counts)-Math.min(...counts)<=1);
     assert.ok(sheet.every(q=>q.answer && q.explanation));
   }

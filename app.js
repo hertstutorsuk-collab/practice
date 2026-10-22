@@ -36,7 +36,7 @@ function render(saved = null) {
       const answer = document.createElement('div'); answer.className = 'answer'; answer.hidden = true;
       const result = document.createElement('strong'); result.textContent = question.answer;
       const explanation = document.createElement('p'); explanation.textContent = question.explanation;
-      const input = document.createElement('input'); input.className = 'student-answer'; input.type = 'text'; input.autocomplete = 'off'; input.maxLength = 100; input.value = saved?.answers[index] ?? ''; input.placeholder = question.topic === 'fractions' ? 'e.g. 3/4' : 'Your answer'; input.setAttribute('aria-label', `Your answer to question ${index+1}`);
+      const input = document.createElement('input'); input.className = 'student-answer'; input.type = 'text'; input.autocomplete = 'off'; input.maxLength = 100; input.value = saved?.answers[index] ?? ''; input.placeholder = question.decimalPlaces === 4 ? 'To 4 decimal places' : 'Your answer'; input.setAttribute('aria-label', `Your answer to question ${index+1}`);
       const feedback = document.createElement('p'); feedback.className = 'feedback'; feedback.id = `feedback-${index}`; input.setAttribute('aria-describedby',feedback.id);
       input.addEventListener('input', () => { feedback.textContent = ''; item.removeAttribute('data-result'); document.querySelector('#score').hidden = true; document.querySelector('#retry').hidden = true; hideSummary(); saveWork(); });
       answer.append(result,explanation);
@@ -71,7 +71,7 @@ if (restored) document.querySelector('#save-status').textContent = 'Welcome back
 document.querySelector('#mark').addEventListener('click', () => {
   const items = [...list.children];
   lastResults = items.map((item,index) => {
-    const result = checkAnswer(item.querySelector('input').value,currentQuestions[index].answer,currentQuestions[index].topic === 'fractions');
+    const result = checkAnswer(item.querySelector('input').value,currentQuestions[index].answer,false, currentQuestions[index].decimalPlaces === 4 ? 0.000050001 : 1e-9);
     item.dataset.result = result;
     item.querySelector('.feedback').textContent = {correct:'✓ Correct — nicely done!',incorrect:'↻ Not quite. Try again or check the worked answer.',blank:'Add an answer to this question.',simplify:'Almost! Your value is right; simplify your fraction.'}[result];
     return result;

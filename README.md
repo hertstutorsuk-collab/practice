@@ -1,47 +1,39 @@
-# Practice
+# Herts Tutors — WA ATAR Mathematics Methods
 
-A GCSE maths question generator with fractions, percentages and algebra, three difficulty levels, unique questions per worksheet, worked answers, and print styles.
+A browser-based starter practice bank for Western Australian ATAR Mathematics Methods. This is independent practice, not an endorsed SCSA product, complete syllabus, exam simulation, ATAR predictor or AI marker.
 
-## Run
+## Run and test
 
-Requires Python 3 and Node.js 18+ for tests. No package installation or API keys needed.
+Requires Python 3 and Node.js 18+. No package installation or API keys required.
 
 ```sh
 npm start
-```
-
-Open port 3000 in your development environment. Choose your settings and select **Generate my worksheet**. **Show answers** reveals solutions; **Print** opens the browser print dialog, where you can save a PDF. Hide answers before printing a student copy.
-
-```sh
 npm test
 ```
 
-Question generation runs locally in the browser. No student accounts, data collection, or AI service is used. Fonts optionally load from Google Fonts; system fonts work offline. Difficulty varies the numbers and question structure; this is a starter question bank, not full GCSE curriculum coverage.
+The server uses port 3000. Static files can also be hosted on GitHub Pages, using main and / (root). The project site is https://hertstutorsuk-collab.github.io/practice/ . Site changes require successful GitHub Pages deployment.
 
-## Publish with GitHub Pages
+## Practice coverage
 
-This app is ready for static hosting; no build or API keys are required.
+- Functions: quadratic evaluation, exponential evaluation, natural logarithms.
+- Calculus: quadratic gradients, definite integrals of quadratic expressions, a chain-rule gradient.
+- Probability: binomial expectation, point probabilities, cumulative probabilities.
+- Statistics: sample proportions, estimated standard errors, approximate 95% confidence interval margins using z = 1.96.
 
-In the GitHub repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then select **main** and **/ (root)** and click **Save**. GitHub will show the published URL when deployment completes. The expected project URL is `https://hertstutorsuk-collab.github.io/practice/`; it is not live until Pages deployment succeeds.
+Three difficulty levels vary the selected skills; they do not map to grades or official unit boundaries. Mixed revision balances all four topics. Questions take numerical answers, with four-decimal-place instructions where needed. Rounding tolerance accepts sufficiently precise values; marking checks final answers only, not working or method marks. There is no AI service or symbolic algebra marker. Full trigonometry, normal distributions and extended modelling remain outside this bank.
 
-If GitHub asks you to upgrade or change repository visibility, Pages availability depends on the repository owner's plan. Do not change visibility just to deploy without the owner's approval.
+Enter answers, mark the worksheet, review the topic summary, and retry missed questions or create focused practice. Show answers reveals worked steps. Print opens the browser print dialog; hide answers first for a student copy. A calculator may be useful; this generator does not simulate official calculator restrictions.
 
-## Answer checking
+## Local profiles and saving
 
-Enter an answer below each question and select **Mark my answers** for a score and feedback. **Retry missed questions** clears only missed answers, hides worked solutions, and focuses the first retry. Correct answers remain filled. Fraction answers accept a/b notation; equivalent fractions needing simplification receive a prompt. Numeric decimals and `x = ...` are supported. This checks final answers only, not GCSE method marks. Scores are practice feedback, not predicted GCSE grades, and are not stored.
+The welcome screen shows “Hi, [name]”. Remembering a first name or nickname is optional. This is a local browser profile, not secure login; no passwords, private per-user accounts or cross-device syncing exist. Work is shared on the browser. Profile lets you edit or forget a name.
 
-Branding follows the supplied Herts Tutors website screenshot: deep navy (#122b62), gold (#c99a26), white backgrounds and bold headings. Colours are visual approximations from the reference; the original uploaded stag logo is used in the header and as the browser tab icon.
+The latest worksheet and entered answers save locally, with restoration on the same browser and site. Marking and answer visibility reset on return. Clear saved work removes the stored worksheet and pauses saving until a new one is generated. Storage failure does not prevent practice. Methods worksheets use a separate storage key; earlier GCSE sheets are not loaded or deleted.
 
-## Mixed revision and saved work
+## Official resources
 
-Choose **Mixed revision** to balance fractions, percentages and algebra in one worksheet. Marking shows a per-topic summary, with buttons to create focused practice for topics with missed questions. This reflects the current worksheet, not a GCSE grade prediction.
+The site links to SCSA's past ATAR examinations and Mathematics Methods course resource pages. Students choose the course, year, paper and matching marking key on the official site. PDFs are not copied into this repository. Live destination checks may be blocked by the cloud network policy; no individual download or syllabus-year match is claimed verified. Follow current SCSA instructions for technology and examination rules.
 
-Questions and entered answers automatically save in local browser storage. Returning on the same browser and site restores the latest worksheet and answers; marking and answer visibility reset. No account or server is involved. Avoid entering personal information on a shared device. **Clear saved work** removes the stored worksheet and pauses saving until a new worksheet is generated. Private browsing, cleared storage, or another device may not retain work; if saving is unavailable the app remains usable and displays a message.
+## Branding
 
-## Personal welcome
-
-The welcome screen asks for a first name or nickname and shows “Hi, [name]” above the worksheet. Students can continue as a guest, edit their name through **Profile**, or remove it with **Forget my name**. Remembering the name is optional and only uses this browser's local storage; otherwise it lasts for the current visit. This is not secure authentication: there are no passwords, online accounts, individual private worksheet stores or cross-device syncing. Worksheets remain shared within the browser. Secure sign-in would need an authentication provider and per-user data storage.
-
-## Past papers
-
-The Past papers section links to official AQA 8300, Pearson Edexcel 1MA1 and OCR J560 GCSE Maths assessment libraries, with exam-board filtering, Foundation/Higher guidance, calculator paper details and a revision workflow. Students choose a year and download the question paper and matching mark scheme on the official site. No exam PDFs are copied or hosted here; recent materials may be restricted to centres. Live destination/PDF checks were blocked by this cloud environment's network policy; the section does not claim individual downloads are verified.
+Original uploaded Herts Tutors stag logo, white backgrounds, deep navy (#122b62), gold (#c99a26), and bold headings based on the supplied reference. Optional Google Fonts have system fallbacks.

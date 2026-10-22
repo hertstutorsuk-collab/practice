@@ -13,3 +13,8 @@ test('requires simplified fractions when requested',()=>{
   assert.equal(checkAnswer('0/4','0',true),'simplify');
   assert.equal(checkAnswer('0','0',true),'correct');
 });
+test('rounding tolerance accepts precise Methods answers but rejects wrong rounding',()=>{
+  assert.equal(checkAnswer('0.333333333','0.3333',false,0.000050001),'correct');
+  assert.equal(checkAnswer('0.3334','0.3333',false,0.000050001),'incorrect');
+  assert.equal(checkAnswer('1/3','0.3333',false,0.000050001),'correct');
+});
