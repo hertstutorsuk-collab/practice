@@ -37,3 +37,9 @@ The site links to SCSA's past ATAR examinations and Mathematics Methods course r
 ## Branding
 
 Original uploaded Herts Tutors stag logo, white backgrounds, deep navy (#122b62), gold (#c99a26), and bold headings based on the supplied reference. Optional Google Fonts have system fallbacks.
+
+## Exam mistake log
+
+Use Mistake log to record a paper/question reference, Methods topic, marks lost, question text or reminder, the mistake and a plan for next time. Entries can be edited, marked resolved, reopened and deleted. Filters show open, resolved or all records. The summary totals marks lost on open entries; this is not a predicted exam result.
+
+The log holds up to 200 records in this browser's local storage, shared across local profile names. A failed save leaves the previous log unchanged; unreadable saved data is not overwritten. JSON export downloads a backup of the records, but automatic import is not yet supported. There is no photo attachment, cloud syncing or reminder notification. Worksheet clearing and forgetting a profile name do not delete the separate mistake log; delete its entries explicitly if using a shared device.
