@@ -1,4 +1,25 @@
-# Herts Tutors — WA ATAR Mathematics Methods
+# Herts Tutors revision hubs
+
+The main page (`index.html`) is the GCSE revision hub for grade 3→5 and grade 5→7 programmes. The WA ATAR Methods app remains at `methods.html` and links back to the GCSE hub. Both retain the original Herts Tutors branding.
+
+## GCSE hub
+
+- Timetable maker: choose Edexcel, AQA or OCR, grade-target pathway, start date, 2–12 weeks, study days, 20–60 minutes per session, and priority topics.
+- Dated sessions combine recall, practice, marking, and a mixed review every third session. Completion ticks and the plan save on the current browser. Print to retain a PDF. Replacing or clearing a plan requests confirmation.
+- Foundation pathway targets grade 5; Higher pathway targets grade 7. These are goals, not guarantees or grade predictions. Tier selection should be confirmed with the school.
+- Official past paper libraries for all three boards. No PDFs are copied. Link destinations were previously blocked by the cloud network policy and are not live-verified.
+- Original 12-question, 24-indicative-mark topic samplers with worked answers, reveal controls and print-to-PDF. These are new templates, not adapted copies, full mocks, complete syllabus coverage, or board-matched assessments. A tutor should review mark allocations before assessment use.
+- GCSE sampler topics include fractions, percentages, ratio, equations, area and probability for the 3→5 route; indices, quadratics, simultaneous equations, trigonometry, compound change and probability without replacement for 5→7.
+
+The community link/integration is not configured. Student profiles remain browser-local names, not secure login. Tutor dashboards, cloud progress and AI marking are not connected. No community messages are sent. Example papers can guide a separate tutor-reviewed original paper bank.
+
+## Run
+
+Python 3 serves the app, and Node.js 18+ runs `npm test`. No dependency installation or API keys are needed. `npm start` serves port 3000. GitHub Pages uses the main branch and root folder. Printing uses the browser print dialog; visual print layout should be checked in the target browser.
+
+---
+
+## WA ATAR Mathematics Methods archive
 
 A browser-based starter practice bank for Western Australian ATAR Mathematics Methods. This is independent practice, not an endorsed SCSA product, complete syllabus, exam simulation, ATAR predictor or AI marker.
 
